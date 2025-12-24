@@ -21,15 +21,16 @@ function MusicPage() {
         <section className="relative overflow-hidden rounded-3xl bg-indigo-900/50 p-8 md:p-12">
            <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-full md:w-1/3 aspect-square bg-indigo-800 rounded-2xl shadow-2xl overflow-hidden relative group">
-                  <img src="https://placehold.co/400x400/312e81/e0e7ff?text=Album+Art" alt="Album" className="w-full h-full object-cover" />
+                  <img src="https://placehold.co/400x400/312e81/e0e7ff?text=Rock+Anthems" alt="Album" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                     <PlayCircle className="w-16 h-16 text-white" />
                   </div>
               </div>
               <div className="flex-1 space-y-6">
-                 <h2 className="text-3xl md:text-5xl font-bold">Latest Vibes</h2>
+                 <h2 className="text-3xl md:text-5xl font-bold">Rock & Alternative</h2>
                  <p className="text-indigo-200 text-lg max-w-xl">
-                   Exploring soundscapes and rhythms. A collection of what I'm listening to and creating.
+                   My heart beats to the sound of distorted guitars and powerful drums. 
+                   From classic rock legends to modern indie vibes, this is my sonic playground.
                  </p>
                  <div className="flex gap-4">
                     <button className="px-6 py-3 bg-pink-600 hover:bg-pink-500 text-white rounded-full font-bold transition-colors">Play Now</button>

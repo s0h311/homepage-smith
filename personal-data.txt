@@ -1,0 +1,20 @@
+name: Soheil
+age: 23
+email: kontakt@soheilnazari.de
+Based in Hamburg,
+Hobbies:
+- reading
+- running
+- traveling
+- playing music
+- robust software development
+
+Other facts:
+- FC St. Pauli fan.
+- Helped organizing DevFest 2024 and 2025 in Hamburg and generally other community events.
+- Like rock music
+- Like Sapiens, Homo Deus from Harari and Hawkings Brief Answers to the Big Questions
+
+LinkedIn: https://linkedin.com/in/soheiln
+Github: https://github.com/s0h311
+

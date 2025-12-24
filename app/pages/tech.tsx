@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowLeft, Github, Linkedin, Terminal } from 'lucide-react'
+import { ArrowLeft, Github, Linkedin, Terminal, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export const Route = createFileRoute('/tech')({
@@ -26,23 +26,32 @@ function TechPage() {
         <main className="max-w-5xl mx-auto w-full grid md:grid-cols-[1fr_2fr] gap-12">
            <section>
               <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">
-                Hello, <br/> World.
+                Hello, <br/> I'm Soheil.
               </h1>
+              
+              <div className="flex items-center gap-2 text-slate-400 mb-6">
+                <MapPin className="h-4 w-4 text-cyan-500" />
+                <span>Based in Hamburg, Germany</span>
+              </div>
+
               <p className="text-slate-400 mb-8 text-lg leading-relaxed">
-                I build scalable systems and interactive experiences. 
-                Passionate about clean code, open source, and the future of web.
+                I specialize in <strong>robust software development</strong> and building scalable systems. 
+                Proud organizer of <strong>DevFest Hamburg</strong> (2024 & 2025).
               </p>
-              <div className="flex gap-4">
-                 <Button variant="outline" className="gap-2 border-slate-700 hover:bg-slate-800 hover:text-white" asChild>
-                    <a href="https://github.com" target="_blank" rel="noreferrer">
-                      <Github className="h-4 w-4" /> GitHub
-                    </a>
-                 </Button>
-                 <Button variant="outline" className="gap-2 border-slate-700 hover:bg-slate-800 hover:text-white" asChild>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                      <Linkedin className="h-4 w-4" /> LinkedIn
-                    </a>
-                 </Button>
+              
+              <div className="flex flex-col gap-4">
+                  <div className="flex gap-4">
+                     <Button variant="outline" className="gap-2 bg-transparent text-slate-50 border-slate-700 hover:bg-slate-800 hover:text-white" asChild>
+                        <a href="https://github.com/s0h311" target="_blank" rel="noreferrer">
+                          <Github className="h-4 w-4" /> GitHub
+                        </a>
+                     </Button>
+                     <Button variant="outline" className="gap-2 bg-transparent text-slate-50 border-slate-700 hover:bg-slate-800 hover:text-white" asChild>
+                        <a href="https://linkedin.com/in/soheiln" target="_blank" rel="noreferrer">
+                          <Linkedin className="h-4 w-4" /> LinkedIn
+                        </a>
+                     </Button>
+                  </div>
               </div>
            </section>
 

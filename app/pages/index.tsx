@@ -1,15 +1,11 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { authClient } from '@/libs/Auth/authClient'
-import { Plane, Music, Brain, Code, User, LogOut } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Plane, Music, Brain, Code } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
 })
 
 function HomePage() {
-  const { data: session } = authClient.useSession()
-
   const sections = [
     {
       title: 'Travel',
@@ -51,32 +47,6 @@ function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col md:h-screen">
-      {/* Auth / Profile Corner */}
-      <div className="absolute top-4 right-4 z-50">
-        {session ? (
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 shadow-lg">
-                <Link to="/dashboard" className="flex items-center gap-2 px-3 text-sm font-medium hover:text-primary transition-colors">
-                    <User className="w-4 h-4" />
-                    <span className="hidden sm:inline">{session.user.name}</span>
-                </Link>
-                <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    className="h-8 w-8 rounded-full hover:bg-white/20"
-                    onClick={() => authClient.signOut()}
-                >
-                    <LogOut className="w-4 h-4" />
-                </Button>
-            </div>
-        ) : (
-            <Link to="/login">
-                <Button variant="outline" className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20">
-                    Login
-                </Button>
-            </Link>
-        )}
-      </div>
-
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 h-full">
         {sections.map((section) => (
           <Link 
