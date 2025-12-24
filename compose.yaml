@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: .
+    environment:
+      DATABASE_CONNECTION_STRING: ${DATABASE_CONNECTION_STRING}
+      ENVIRONMENT: ${ENVIRONMENT}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      MAIL_SMTP_HOST: ${MAIL_SMTP_HOST}
+      MAIL_SMTP_USER: ${MAIL_SMTP_USER}
+      MAIL_SMTP_PASSWORD: ${MAIL_SMTP_PASSWORD}
+      MAIL_FROM_NAME: ${MAIL_FROM_NAME}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS}
+    depends_on:
+      postgres:
+        condition: service_started
+    networks:
+      - smith-network
+  postgres:
+    image: postgres:18-alpine3.23
+    restart: on-failure
+    environment:
+      POSTGRES_USER: "smith"
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - smith_postgres_data:/var/lib/postgresql/data
+    networks:
+      - smith-network
+
+volumes:
+  smith_postgres_data:
+networks:
+  smith-network:
