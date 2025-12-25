@@ -20,7 +20,7 @@ by frontend and server.
 
 ## Rules
 
-- Use `pnpm dlx` instead of `npx` for commands.
+- Use `pnpm dlx` instead of `npx` for commands. We don't use npm, instead we use pnpm.
 - The code should explain itself. Too many comments decreases readability.
 - Only lint when the implementation is done and all the steps are completed.
   It saves time
