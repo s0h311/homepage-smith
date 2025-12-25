@@ -11,15 +11,13 @@ function DashboardHomePage() {
   const user = session?.user
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className='flex flex-col gap-4'>
       <Card>
         <CardHeader>
           <CardTitle>Welcome back, {user?.name}!</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
-            This is your dashboard overview.
-          </p>
+          <p className='text-muted-foreground'>This is your dashboard overview.</p>
         </CardContent>
       </Card>
     </div>

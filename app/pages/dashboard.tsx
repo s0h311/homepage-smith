@@ -10,11 +10,11 @@ function DashboardLayout() {
   return (
     <SidebarProvider>
       <DashboardSidebar />
-      <main className="w-full">
-        <div className="p-4">
+      <main className='w-full'>
+        <div className='p-4'>
           <SidebarTrigger />
         </div>
-        <div className="p-8">
+        <div className='p-8'>
           <Outlet />
         </div>
       </main>

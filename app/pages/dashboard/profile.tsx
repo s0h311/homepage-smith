@@ -1,12 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { authClient } from '@/libs/Auth/authClient'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
@@ -34,9 +28,7 @@ function DashboardProfilePage() {
             src={user.image || ''}
             alt={user.name}
           />
-          <AvatarFallback className='text-lg'>
-            {user.name.charAt(0)}
-          </AvatarFallback>
+          <AvatarFallback className='text-lg'>{user.name.charAt(0)}</AvatarFallback>
         </Avatar>
         <div>
           <h2 className='text-2xl font-bold'>{user.name}</h2>
@@ -59,19 +51,17 @@ function DashboardProfilePage() {
                 id='name'
                 value={user.name}
                 readOnly
-                className="bg-muted"
+                className='bg-muted'
               />
-              <p className="text-[0.8rem] text-muted-foreground">
-                Name cannot be changed.
-              </p>
+              <p className='text-[0.8rem] text-muted-foreground'>Name cannot be changed.</p>
             </div>
           </CardContent>
         </Card>
 
         <ChangeEmailForm />
 
-        <div className="md:col-span-2">
-            <ChangePasswordForm />
+        <div className='md:col-span-2'>
+          <ChangePasswordForm />
         </div>
       </div>
     </div>

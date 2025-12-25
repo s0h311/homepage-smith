@@ -4,21 +4,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { authClient } from '@/libs/Auth/authClient'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 
 const formSchema = z.object({
@@ -48,8 +35,8 @@ export function ChangeEmailForm() {
       })
 
       if (error) {
-         setStatus('error')
-         setErrorMessage(error.message || 'Failed to update email')
+        setStatus('error')
+        setErrorMessage(error.message || 'Failed to update email')
       } else {
         setStatus('success')
         form.reset()
@@ -64,35 +51,40 @@ export function ChangeEmailForm() {
     <Card>
       <CardHeader>
         <CardTitle>Change Email</CardTitle>
-        <CardDescription>
-          Update your email address. You may need to verify your new email.
-        </CardDescription>
+        <CardDescription>Update your email address. You may need to verify your new email.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className='space-y-4'
+          >
             <FormField
               control={form.control}
-              name="newEmail"
+              name='newEmail'
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>New Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="m@example.com" {...field} />
+                    <Input
+                      placeholder='m@example.com'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            {status === 'error' && (
-              <p className="text-sm text-red-500">{errorMessage}</p>
-            )}
+            {status === 'error' && <p className='text-sm text-red-500'>{errorMessage}</p>}
             {status === 'success' && (
-              <p className="text-sm text-green-500">
+              <p className='text-sm text-green-500'>
                 Email update initiated. Please check your inbox if verification is required.
               </p>
             )}
-            <Button type="submit" disabled={status === 'loading'}>
+            <Button
+              type='submit'
+              disabled={status === 'loading'}
+            >
               {status === 'loading' ? 'Updating...' : 'Update Email'}
             </Button>
           </form>
